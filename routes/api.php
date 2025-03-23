@@ -10,3 +10,4 @@ Route::get('/user', function (Request $request) {
 
 
 Route::delete('/users/{id}', [UserController::class, 'destroy']);
+Route::post('/users', [UserController::class, 'store']);
