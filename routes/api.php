@@ -11,3 +11,6 @@ Route::get('/user', function (Request $request) {
 
 Route::delete('/users/{id}', [UserController::class, 'destroy']);
 Route::post('/users', [UserController::class, 'store']);
+Route::post('/upload-users', [UserController::class, 'uploadUsers']);
+Route::put('/users/{id}', [UserController::class, 'update']);
+Route::patch('/users/{user}/status', [UserController::class, 'updateStatus']);

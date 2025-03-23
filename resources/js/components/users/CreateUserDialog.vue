@@ -1,15 +1,15 @@
-    <!-- components/CreateUserDialog.vue -->
+<!-- components/CreateUserDialog.vue -->
 <template>
-    <Dialog v-model:open="isOpen">
+    <Dialog v-model:open="isOpen" class="dark:bg-gray-800">
         <DialogTrigger as-child>
-            <Button @click="openDialog">
+            <Button @click="openDialog" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 dark:bg-gray-700 dark:text-gray-200">
                 <UserRoundPlus class="w-4 h-4 mr-2" /> Create
             </Button>
         </DialogTrigger>
         <DialogContent>
             <DialogHeader>
-                <DialogTitle>Create New User</DialogTitle>
-                <DialogDescription>Fill in the details to add a new user.</DialogDescription>
+                <DialogTitle class="text-lg font-bold dark:text-gray-200">Create New User</DialogTitle>
+                <DialogDescription class="text-sm dark:text-gray-400">Fill in the details to add a new user.</DialogDescription>
             </DialogHeader>
 
             <form @submit.prevent="createUser">
@@ -28,8 +28,8 @@
                 </div>
 
                 <DialogFooter class="mt-4">
-                    <Button variant="outline" @click="closeDialog">Cancel</Button>
-                    <Button type="submit" :disabled="loading">
+                    <Button variant="outline" @click="closeDialog" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded border border-gray-300 dark:bg-gray-700 dark:text-gray-200">Cancel</Button>
+                    <Button type="submit" :disabled="loading" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded dark:bg-gray-700 dark:text-gray-200">
                         <span v-if="loading">Creating...</span>
                         <span v-else>Create</span>
                     </Button>
@@ -72,6 +72,6 @@ const createUser = async () => {
 
 <style scoped>
 .form-input {
-    @apply border p-2 rounded w-full bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-200;
+    @apply p-2 rounded w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700;
 }
 </style>
